@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  agent-zero-mobile:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    
+  # Optional: Add your Agent Zero backend service here
+  # agent-zero-backend:
+  #   image: your-backend-image:latest
+  #   ports:
+  #     - "8000:8000"
+  #   environment:
+  #     - DATABASE_URL=your-database-url
+  #   restart: unless-stopped
